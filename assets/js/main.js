@@ -3,7 +3,7 @@
 // 2) Formulario de diagnóstico: arma el mensaje y lo abre en WhatsApp.
 //    Más adelante este envío se conecta también al CRM (webhook).
 (function () {
-  var WHATSAPP = "593990332449";
+  var WHATSAPP = "593967126789";
   var waUrl = function (text) { return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text); };
 
   document.querySelectorAll("[data-wa]").forEach(function (a) {
