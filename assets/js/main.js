@@ -17,6 +17,12 @@
   var error = document.getElementById("form-error");
   if (!form) return;
 
+  // La etiqueta del país cambia según exporte o importe.
+  var op = form.elements["operacion"], paisLabel = document.getElementById("f-pais-label");
+  if (op && paisLabel) op.addEventListener("change", function () {
+    paisLabel.textContent = op.value === "Importación" ? "País de origen" : op.value === "Ambas" ? "País de destino u origen" : "País de destino";
+  });
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     var data = new FormData(form);
@@ -43,7 +49,10 @@
       "Nombre: " + get("nombre"),
       get("empresa") ? "Empresa: " + get("empresa") : null,
       "Necesito: " + get("servicio"),
-      get("producto") ? "Producto y destino: " + get("producto") : null,
+      get("email") ? "Correo: " + get("email") : null,
+      "Operación: " + get("operacion"),
+      get("producto") ? "Producto: " + get("producto") : null,
+      get("pais") ? (get("operacion") === "Importación" ? "País de origen: " : "País de destino: ") + get("pais") : null,
       "Mi WhatsApp: " + get("whatsapp")
     ].filter(Boolean);
 
