@@ -22,5 +22,5 @@ assets/img/             Logo (azul y blanco) y favicon
 
 - Reemplazar el logo provisional (sacado de una captura) por el archivo original en SVG o PNG grande.
 - Validar textos, servicios y preguntas frecuentes con Johanna y Marcelo.
-- Quitar `<meta name="robots" content="noindex, nofollow">` cuando se conecte el dominio originworldconsulting.com.ec.
+- [x] noindex quitado el 12-nov-2026 (Jay aprobó: el cliente ya corrigió la web). robots.txt y sitemap.xml en la raíz.
 - Conectar el formulario al CRM.
