@@ -80,6 +80,8 @@ p { margin: 0; }
 .btn-ghost:hover { background: rgba(255,255,255,.08); border-color: #fff; }
 .btn-small { min-height: 42px; padding: 0 18px; font-size: .92rem; }
 .btn-block { width: 100%; }
+.btn-outline { background: transparent; color: var(--brand-500); border-color: var(--brand-500); }
+.btn-outline:hover { background: var(--brand-500); color: #fff; }
 
 /* Encabezado */
 .site-header {
@@ -90,10 +92,11 @@ p { margin: 0; }
 .header-row { display: flex; align-items: center; gap: 28px; min-height: 72px; }
 .brand { margin-right: auto; }
 .brand img { height: 40px; width: auto; }
-.nav { display: flex; gap: 28px; }
+.nav { display: flex; gap: 22px; }
 .nav a { color: #DCE4F7; text-decoration: none; font-weight: 500; font-size: .95rem; }
 .nav a:hover { color: #fff; }
-@media (max-width: 960px) { .nav { display: none; } }
+@media (max-width: 1120px) { .nav { gap: 16px; } .nav a { font-size: .88rem; } }
+@media (max-width: 1020px) { .nav { display: none; } }
 
 /* Flecha de puntos (motivo de la marca) */
 .dots {
@@ -225,7 +228,8 @@ p { margin: 0; }
 .topics ul { list-style: none; margin: 14px 0 0; padding: 0; }
 .topics li { position: relative; padding: 8px 0 8px 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; line-height: 1.45; }
 .topics li::before { content: ""; position: absolute; left: 0; top: 15px; width: 7px; height: 7px; border-radius: 50%; background: var(--brand-500); }
-.training-cta { margin-top: 32px; display: flex; justify-content: center; }
+.training-cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.topics li strong { color: var(--brand); font-weight: 700; }
 
 /* Proceso (secuencia real: numerado) */
 .process { background: linear-gradient(180deg, var(--ink-900), var(--ink-950)); }
@@ -246,9 +250,14 @@ p { margin: 0; }
 .agreements-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
 .agreement-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .agreement-list li {
-  border: 1px solid var(--line); background: var(--paper); border-radius: 999px;
+  border: 1px solid #B9CCF2; background: #E4ECFC; border-radius: 999px;
   padding: 11px 18px; font-weight: 600; font-size: .95rem; color: var(--brand);
 }
+.agreement-list li.is-featured {
+  background: var(--brand); border-color: var(--brand); color: #fff;
+  font-size: 1.05rem; padding: 13px 22px; box-shadow: 0 8px 22px rgba(10, 45, 133, .25);
+}
+.agreements .section-lead { margin-top: 16px; }
 
 /* Equipo */
 .people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
@@ -349,6 +358,7 @@ p { margin: 0; }
   .brand img { height: 32px; }
   .btn-small { padding: 0 14px; font-size: .84rem; min-height: 38px; }
   .hero-actions .btn { width: 100%; }
+  .training-cta .btn { width: 100%; text-align: center; line-height: 1.25; padding: 12px 20px; }
   .hero-facts { grid-template-columns: 1fr; gap: 14px; }
   .chip-top { left: 10px; top: 14px; }
   .chip-bottom { right: 10px; bottom: 14px; }
